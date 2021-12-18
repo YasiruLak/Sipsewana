@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="750.0" prefWidth="1076.0" style="-fx-background-color: #89aec9;" stylesheets="@style/StyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.sipsewana.controller.StudentDetailController">
+   <children>
+      <TableView layoutX="34.0" layoutY="254.0" prefHeight="224.0" prefWidth="1027.0">
+         <columns>
+            <TableColumn prefWidth="195.0" text="Name" />
+            <TableColumn prefWidth="265.0" text="Address" />
+            <TableColumn prefWidth="132.0" text="Date Of Birth" />
+            <TableColumn prefWidth="98.0" text="Gender" />
+            <TableColumn prefWidth="140.0" text="Contact" />
+            <TableColumn prefWidth="202.0" text="Email" />
+         </columns>
+      </TableView>
+      <TableView layoutX="34.0" layoutY="503.0" prefHeight="224.0" prefWidth="1027.0">
+         <columns>
+            <TableColumn prefWidth="169.0" text="Program Id" />
+            <TableColumn prefWidth="433.0" text="Program Name" />
+            <TableColumn prefWidth="196.0" text="Duration" />
+            <TableColumn prefWidth="226.0" text="Fee(LKR)" />
+         </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutX="234.0" layoutY="14.0" prefHeight="46.0" prefWidth="818.0" styleClass="liner-title" text="STUDENT DETAILS" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="44.0" layoutY="30.0" text="Reg No :">
+         <font>
+            <Font name="Cambria Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblRegID" layoutX="147.0" layoutY="30.0" text="R0001">
+         <font>
+            <Font name="Cambria Bold" size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="28.0" layoutY="75.0" prefHeight="2.0" prefWidth="1033.0" />
+      <Label layoutX="44.0" layoutY="181.0" prefHeight="30.0" prefWidth="119.0" text="Full Name :">
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField focusColor="WHITE" layoutX="180.0" layoutY="169.0" prefHeight="38.0" prefWidth="402.0" promptText="Search Here Enter Name" unFocusColor="BLACK">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </JFXTextField>
+      <Label layoutX="44.0" layoutY="125.0" prefHeight="30.0" prefWidth="119.0" text="Student ID :">
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField focusColor="WHITE" layoutX="180.0" layoutY="110.0" prefHeight="38.0" prefWidth="385.0" promptText="Search Here Enter Student ID" unFocusColor="BLACK">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </JFXTextField>
+   </children>
+</AnchorPane>

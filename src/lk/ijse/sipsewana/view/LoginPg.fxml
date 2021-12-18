@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="818.0" styleClass="login_main" stylesheets="@style/StyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.sipsewana.controller.LoginPgController">
+   <children>
+      <ImageView fitHeight="421.0" fitWidth="422.0" layoutX="395.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/logoWhite.png" />
+         </image>
+      </ImageView>
+      <Pane layoutY="147.0" prefHeight="200.0" prefWidth="358.0" styleClass="login_pane">
+         <children>
+            <JFXTextField fx:id="txtUserName" focusColor="DODGERBLUE" labelFloat="true" layoutX="91.0" layoutY="48.0" prefHeight="38.0" prefWidth="195.0" promptText="User Name" unFocusColor="#e1e8ff">
+               <font>
+                  <Font name="Cambria" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </JFXTextField>
+            <JFXTextField fx:id="pswPassword" focusColor="DODGERBLUE" labelFloat="true" layoutX="91.0" layoutY="115.0" prefHeight="38.0" prefWidth="195.0" promptText="Password" unFocusColor="#dfe4ea">
+               <font>
+                  <Font name="Cambria" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </JFXTextField>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="28.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/user.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="28.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/password.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btnLogin" buttonType="RAISED" contentDisplay="CENTER" layoutX="312.0" layoutY="68.0" onAction="#btnLoginOnAction" prefHeight="65.0" prefWidth="65.0" ripplerFill="WHITE" styleClass="login_btn" text="GO" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </JFXButton>
+         </children></Pane>
+      <Label layoutX="240.0" layoutY="503.0" text="Copyright © 2021 Yasiru Dahanayaka All right reserved ">
+         <font>
+            <Font name="Cambria Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Label>
+      <Label layoutX="731.0" layoutY="503.0" text="Version 1.0.0">
+         <font>
+            <Font name="Cambria Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Label>
+   </children>
+</Pane>

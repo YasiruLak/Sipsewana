@@ -1,0 +1,76 @@
+.login_main {
+    -fx-background-color: linear-gradient(to right, #a1aec9, #5477bf);
+}
+
+.login_pane {
+    -fx-background-color: #a0b5ff;
+    -fx-background-radius: 0 100 100 0;
+}
+
+.login_btn {
+    -fx-background-color: linear-gradient(to left, #a1aec9, #435a8a);
+    -fx-background-radius: 100;
+}
+
+.login_btn:hover{
+    -fx-background-color: #6388ff;
+}
+
+.nav {
+    -fx-background-color: linear-gradient(to bottom, #65a4c2, #1b2f38);
+}
+
+.button-exit:hover{
+    -fx-cursor: hand;
+    -fx-background-radius: 100 0 0 100;
+    -fx-background-color:  #ff5959;
+}
+
+.btn-nav:hover{
+    -fx-cursor: hand;
+    -fx-background-radius: 100 0 0 100;
+    -fx-background-color:  #89aec9;
+}
+
+.button-add:hover{
+    -fx-cursor: hand;
+    -fx-background-color: #2e86de;
+}
+
+.button-update:hover{
+    -fx-cursor: hand;
+    -fx-background-color: #2ed573;
+}
+
+.button-delete:hover{
+    -fx-cursor: hand;
+    -fx-background-color: #ff5959;
+}
+
+.table-view:focused{
+    -fx-background-insets: 0px;
+}
+
+.table-view .column-header{
+    -fx-size:32px;
+    -fx-background-color: #004875;
+    -fx-font-size: 14px;
+}
+
+.table-view .column-header .label{
+    -fx-text-fill: white;
+}
+
+.table-view .table-row-cell:empty{
+    -fx-background-color: white;
+    -fx-font-size: 12px;
+}
+.table-view .table-row-cell:selected{
+    -fx-background-color:linear-gradient(to right, rgba(119, 8, 245, 0.29), rgba(15, 93, 255, 0.39));
+}
+
+.table-view .table-row-cell:selected *{
+    -fx-font-weight: bold;
+    -fx-text-fill: rgb(54, 49, 49);
+    -fx-font-size: 13px;
+}
