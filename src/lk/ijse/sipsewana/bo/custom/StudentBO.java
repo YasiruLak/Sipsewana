@@ -1,5 +1,7 @@
 package lk.ijse.sipsewana.bo.custom;
 
+import lk.ijse.sipsewana.bo.SuperBO;
+
 /**
  * @author : Yasiru Dahanayaka
  * @name : Sipsewana
@@ -8,5 +10,5 @@ package lk.ijse.sipsewana.bo.custom;
  * @year : 2021
  * @since : 0.1.0
  **/
-public interface StudentBO {
+public interface StudentBO extends SuperBO {
 }

@@ -8,5 +8,5 @@ package lk.ijse.sipsewana.entity;
  * @year : 2021
  * @since : 0.1.0
  **/
-public class Student {
+public class Student implements SuperEntity {
 }

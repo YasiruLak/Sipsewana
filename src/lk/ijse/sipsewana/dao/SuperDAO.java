@@ -1,5 +1,7 @@
 package lk.ijse.sipsewana.dao;
 
+import org.hibernate.Session;
+
 /**
  * @author : Yasiru Dahanayaka
  * @name : Sipsewana
@@ -9,4 +11,5 @@ package lk.ijse.sipsewana.dao;
  * @since : 0.1.0
  **/
 public interface SuperDAO {
+    void setSession(Session session);
 }

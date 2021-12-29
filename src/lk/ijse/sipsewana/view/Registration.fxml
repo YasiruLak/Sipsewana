@@ -15,19 +15,19 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="750.0" prefWidth="1076.0" style="-fx-background-color: #89aec9;" stylesheets="@style/StyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.sipsewana.controller.CourseController">
+<AnchorPane prefHeight="750.0" prefWidth="1076.0" style="-fx-background-color: #89aec9;" stylesheets="@style/StyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.sipsewana.controller.RegistrationController">
    <children>
       <Label alignment="CENTER" layoutX="414.0" layoutY="9.0" prefHeight="46.0" prefWidth="648.0" styleClass="liner-title" text="STUDENT REGISTRATION" textFill="WHITE">
          <font>
             <Font name="Times New Roman Bold" size="32.0" />
          </font>
       </Label>
-      <Label layoutX="46.0" layoutY="131.0" prefHeight="30.0" prefWidth="119.0" text="Full Name :">
+      <Label layoutX="46.0" layoutY="168.0" prefHeight="30.0" prefWidth="119.0" text="Full Name :">
          <font>
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <JFXTextField focusColor="WHITE" layoutX="165.0" layoutY="116.0" prefHeight="38.0" prefWidth="402.0" unFocusColor="BLACK">
+      <JFXTextField focusColor="WHITE" layoutX="165.0" layoutY="153.0" prefHeight="38.0" prefWidth="402.0" unFocusColor="BLACK">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
@@ -35,12 +35,12 @@
             <Cursor fx:constant="TEXT" />
          </cursor>
       </JFXTextField>
-      <Label layoutX="46.0" layoutY="254.0" prefHeight="30.0" prefWidth="145.0" text="Date Of Birth :">
+      <Label layoutX="46.0" layoutY="272.0" prefHeight="30.0" prefWidth="145.0" text="Date Of Birth :">
          <font>
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="46.0" layoutY="310.0" prefHeight="30.0" prefWidth="102.0" text="Gender :">
+      <Label layoutX="46.0" layoutY="324.0" prefHeight="30.0" prefWidth="102.0" text="Gender :">
          <font>
             <Font name="Cambria" size="20.0" />
          </font>
@@ -103,32 +103,22 @@
             <TableColumn prefWidth="202.0" text="Email" />
          </columns>
       </TableView>
-      <Label layoutX="254.0" layoutY="25.0" text="Student ID : ">
-         <font>
-            <Font name="Cambria Bold" size="24.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblStID" layoutX="398.0" layoutY="25.0" text="S0001">
-         <font>
-            <Font name="Cambria Bold" size="24.0" />
-         </font>
-      </Label>
       <Label layoutX="38.0" layoutY="25.0" text="Reg No :">
          <font>
             <Font name="Cambria Bold" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="lblRegID" layoutX="141.0" layoutY="25.0" text="R0001">
+      <Label layoutX="141.0" layoutY="25.0" text="R0001">
          <font>
             <Font name="Cambria Bold" size="24.0" />
          </font>
       </Label>
-      <JFXDatePicker defaultColor="#357cee" layoutX="201.0" layoutY="238.0" prefHeight="38.0" prefWidth="261.0">
+      <JFXDatePicker defaultColor="#357cee" layoutX="201.0" layoutY="256.0" prefHeight="38.0" prefWidth="261.0">
          <cursor>
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
       </JFXDatePicker>
-      <RadioButton layoutX="157.0" layoutY="310.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="59.0" text="Male">
+      <RadioButton layoutX="150.0" layoutY="324.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="59.0" text="Male">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -136,7 +126,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </RadioButton>
-      <RadioButton layoutX="224.0" layoutY="310.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="74.0" text="Female">
+      <RadioButton layoutX="217.0" layoutY="324.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="74.0" text="Female">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -145,12 +135,12 @@
          </cursor>
       </RadioButton>
       <Separator layoutX="22.0" layoutY="70.0" prefHeight="2.0" prefWidth="1033.0" />
-      <Label layoutX="46.0" layoutY="191.0" prefHeight="30.0" prefWidth="119.0" text="Address :">
+      <Label layoutX="46.0" layoutY="217.0" prefHeight="30.0" prefWidth="119.0" text="Address :">
          <font>
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <JFXTextField focusColor="WHITE" layoutX="165.0" layoutY="176.0" prefHeight="38.0" prefWidth="402.0" unFocusColor="BLACK">
+      <JFXTextField focusColor="WHITE" layoutX="165.0" layoutY="202.0" prefHeight="38.0" prefWidth="402.0" unFocusColor="BLACK">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
@@ -158,12 +148,12 @@
             <Cursor fx:constant="TEXT" />
          </cursor>
       </JFXTextField>
-      <Label layoutX="46.0" layoutY="364.0" prefHeight="30.0" prefWidth="119.0" text="Contact :">
+      <Label layoutX="46.0" layoutY="377.0" prefHeight="30.0" prefWidth="119.0" text="Contact :">
          <font>
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <JFXTextField focusColor="WHITE" layoutX="165.0" layoutY="349.0" prefHeight="38.0" prefWidth="261.0" unFocusColor="BLACK">
+      <JFXTextField focusColor="WHITE" layoutX="165.0" layoutY="362.0" prefHeight="38.0" prefWidth="261.0" unFocusColor="BLACK">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
@@ -234,5 +224,18 @@
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
       </JFXComboBox>
+      <Label layoutX="46.0" layoutY="121.0" prefHeight="30.0" prefWidth="119.0" text="Student ID :">
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField focusColor="WHITE" layoutX="165.0" layoutY="106.0" prefHeight="38.0" prefWidth="402.0" unFocusColor="BLACK">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </JFXTextField>
    </children>
 </AnchorPane>

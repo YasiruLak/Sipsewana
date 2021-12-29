@@ -1,5 +1,7 @@
 package lk.ijse.sipsewana.bo.custom.impl;
 
+import lk.ijse.sipsewana.bo.custom.StudentBO;
+
 /**
  * @author : Yasiru Dahanayaka
  * @name : Sipsewana
@@ -8,5 +10,5 @@ package lk.ijse.sipsewana.bo.custom.impl;
  * @year : 2021
  * @since : 0.1.0
  **/
-public class StudentBOImpl {
+public class StudentBOImpl implements StudentBO {
 }

@@ -11,125 +11,142 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="741.0" prefWidth="1301.0" style="-fx-background-color: #89aec9;" stylesheets="@style/StyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.sipsewana.controller.DashboardController">
-   <children>
-      <Pane prefHeight="750.0" prefWidth="225.0" styleClass="nav">
-         <children>
-            <JFXButton fx:id="btnExit" ellipsisString="" layoutY="468.0" onAction="#goToExitOnAction" prefHeight="50.0" prefWidth="225.0" styleClass="button-exit" stylesheets="@style/StyleSheet.css" text="EXIT" textFill="WHITE">
-               <font>
-                  <Font name="Times New Roman Bold" size="24.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <ripplerFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#eb3355" />
-                        <Stop color="#ff4f72" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </ripplerFill>
-            </JFXButton>
-            <ImageView fitHeight="224.0" fitWidth="224.0" layoutY="527.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/logo.png" />
-               </image>
-            </ImageView>
-            <JFXButton fx:id="btnRegister" ellipsisString="" layoutY="67.0" onAction="#goToRegisterOnAction" prefHeight="50.0" prefWidth="225.0" styleClass="btn-nav" stylesheets="@style/StyleSheet.css" text="REGISTRATION" textFill="WHITE">
-               <font>
-                  <Font name="Times New Roman Bold" size="24.0" />
-               </font>
-               <ripplerFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#2e2ef1" />
-                        <Stop color="WHITE" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </ripplerFill>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <JFXButton fx:id="btnCourse" ellipsisString="" layoutY="117.0" onAction="#goToCourseOnAction" prefHeight="50.0" prefWidth="225.0" styleClass="btn-nav" stylesheets="@style/StyleSheet.css" text="COURSES" textFill="WHITE">
-               <font>
-                  <Font name="Times New Roman Bold" size="24.0" />
-               </font>
-               <ripplerFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#2e2ef1" />
-                        <Stop color="WHITE" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </ripplerFill>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <JFXButton fx:id="btnStudent" ellipsisString="" layoutY="167.0" onAction="#goToStudentDetailOnAction" prefHeight="50.0" prefWidth="225.0" styleClass="btn-nav" stylesheets="@style/StyleSheet.css" text="STUDENTS" textFill="WHITE">
-               <font>
-                  <Font name="Times New Roman Bold" size="24.0" />
-               </font>
-               <ripplerFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#2e2ef1" />
-                        <Stop color="WHITE" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </ripplerFill>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <JFXButton ellipsisString="" layoutY="217.0" onAction="#goToHelpOnAction" prefHeight="50.0" prefWidth="225.0" styleClass="btn-nav" stylesheets="@style/StyleSheet.css" text="HELP" textFill="WHITE">
-               <font>
-                  <Font name="Times New Roman Bold" size="24.0" />
-               </font>
-               <ripplerFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#2e2ef1" />
-                        <Stop color="WHITE" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </ripplerFill>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <JFXButton ellipsisString="" layoutY="267.0" onAction="#goToSettingOnAction" prefHeight="50.0" prefWidth="225.0" styleClass="btn-nav" stylesheets="@style/StyleSheet.css" text="SETTINGS" textFill="WHITE">
-               <font>
-                  <Font name="Times New Roman Bold" size="24.0" />
-               </font>
-               <ripplerFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#2e2ef1" />
-                        <Stop color="WHITE" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </ripplerFill>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-         </children>
-      </Pane>
-      <AnchorPane fx:id="DashboardContext" layoutX="225.0" prefHeight="750.0" prefWidth="1076.0">
-         <children>
-            <Label alignment="CENTER" layoutX="9.0" layoutY="7.0" prefHeight="56.0" prefWidth="1058.0" styleClass="liner-title" text="DASHBOARD " textFill="WHITE">
-               <font>
-                  <Font name="Times New Roman Bold" size="32.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="513.0" fitWidth="1023.0" layoutX="128.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/DashboardImg.png" />
-               </image>
-            </ImageView>
-         </children></AnchorPane>
-   </children>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="741.0" prefWidth="1301.0"
+            style="-fx-background-color: #89aec9;" stylesheets="@style/StyleSheet.css"
+            xmlns="http://javafx.com/javafx/8.0.171" fx:controller="lk.ijse.sipsewana.controller.DashboardController">
+    <children>
+        <Pane prefHeight="750.0" prefWidth="225.0" styleClass="nav">
+            <children>
+                <JFXButton fx:id="btnExit" ellipsisString="" layoutY="468.0" onAction="#goToExitOnAction"
+                           prefHeight="50.0" prefWidth="225.0" styleClass="button-exit"
+                           stylesheets="@style/StyleSheet.css" text="EXIT" textFill="WHITE">
+                    <font>
+                        <Font name="Times New Roman Bold" size="24.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                    <ripplerFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                            <stops>
+                                <Stop color="#eb3355"/>
+                                <Stop color="#ff4f72" offset="1.0"/>
+                            </stops>
+                        </LinearGradient>
+                    </ripplerFill>
+                </JFXButton>
+                <ImageView fitHeight="224.0" fitWidth="224.0" layoutY="527.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assets/logo.png"/>
+                    </image>
+                </ImageView>
+                <JFXButton fx:id="btnRegister" ellipsisString="" layoutY="67.0" onAction="#goToRegisterOnAction"
+                           prefHeight="50.0" prefWidth="225.0" styleClass="btn-nav" stylesheets="@style/StyleSheet.css"
+                           text="REGISTRATION" textFill="WHITE">
+                    <font>
+                        <Font name="Times New Roman Bold" size="24.0"/>
+                    </font>
+                    <ripplerFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                            <stops>
+                                <Stop color="#2e2ef1"/>
+                                <Stop color="WHITE" offset="1.0"/>
+                            </stops>
+                        </LinearGradient>
+                    </ripplerFill>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="btnCourse" ellipsisString="" layoutY="117.0" onAction="#goToCourseOnAction"
+                           prefHeight="50.0" prefWidth="225.0" styleClass="btn-nav" stylesheets="@style/StyleSheet.css"
+                           text="COURSES" textFill="WHITE">
+                    <font>
+                        <Font name="Times New Roman Bold" size="24.0"/>
+                    </font>
+                    <ripplerFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                            <stops>
+                                <Stop color="#2e2ef1"/>
+                                <Stop color="WHITE" offset="1.0"/>
+                            </stops>
+                        </LinearGradient>
+                    </ripplerFill>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="btnStudent" ellipsisString="" layoutY="167.0" onAction="#goToStudentDetailOnAction"
+                           prefHeight="50.0" prefWidth="225.0" styleClass="btn-nav" stylesheets="@style/StyleSheet.css"
+                           text="STUDENTS" textFill="WHITE">
+                    <font>
+                        <Font name="Times New Roman Bold" size="24.0"/>
+                    </font>
+                    <ripplerFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                            <stops>
+                                <Stop color="#2e2ef1"/>
+                                <Stop color="WHITE" offset="1.0"/>
+                            </stops>
+                        </LinearGradient>
+                    </ripplerFill>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </JFXButton>
+                <JFXButton ellipsisString="" layoutY="217.0" onAction="#goToHelpOnAction" prefHeight="50.0"
+                           prefWidth="225.0" styleClass="btn-nav" stylesheets="@style/StyleSheet.css" text="HELP"
+                           textFill="WHITE">
+                    <font>
+                        <Font name="Times New Roman Bold" size="24.0"/>
+                    </font>
+                    <ripplerFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                            <stops>
+                                <Stop color="#2e2ef1"/>
+                                <Stop color="WHITE" offset="1.0"/>
+                            </stops>
+                        </LinearGradient>
+                    </ripplerFill>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </JFXButton>
+                <JFXButton ellipsisString="" layoutY="267.0" onAction="#goToSettingOnAction" prefHeight="50.0"
+                           prefWidth="225.0" styleClass="btn-nav" stylesheets="@style/StyleSheet.css" text="SETTINGS"
+                           textFill="WHITE">
+                    <font>
+                        <Font name="Times New Roman Bold" size="24.0"/>
+                    </font>
+                    <ripplerFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                            <stops>
+                                <Stop color="#2e2ef1"/>
+                                <Stop color="WHITE" offset="1.0"/>
+                            </stops>
+                        </LinearGradient>
+                    </ripplerFill>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </JFXButton>
+            </children>
+        </Pane>
+        <AnchorPane fx:id="DashboardContext" layoutX="225.0" prefHeight="750.0" prefWidth="1076.0">
+            <children>
+                <Label alignment="CENTER" layoutX="9.0" layoutY="7.0" prefHeight="56.0" prefWidth="1058.0"
+                       styleClass="liner-title" text="DASHBOARD " textFill="WHITE">
+                    <font>
+                        <Font name="Times New Roman Bold" size="32.0"/>
+                    </font>
+                </Label>
+                <ImageView fitHeight="513.0" fitWidth="1023.0" layoutX="128.0" layoutY="119.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../assets/DashboardImg.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>

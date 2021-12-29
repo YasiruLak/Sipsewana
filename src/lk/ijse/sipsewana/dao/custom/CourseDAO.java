@@ -1,5 +1,8 @@
 package lk.ijse.sipsewana.dao.custom;
 
+import lk.ijse.sipsewana.dao.CrudDAO;
+import lk.ijse.sipsewana.entity.Course;
+
 /**
  * @author : Yasiru Dahanayaka
  * @name : Sipsewana
@@ -8,5 +11,6 @@ package lk.ijse.sipsewana.dao.custom;
  * @year : 2021
  * @since : 0.1.0
  **/
-public interface CourseDAO {
+public interface CourseDAO extends CrudDAO<Course, String> {
+    boolean ifCourseExists(String code);
 }

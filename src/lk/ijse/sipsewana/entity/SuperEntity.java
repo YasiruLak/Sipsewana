@@ -1,5 +1,7 @@
 package lk.ijse.sipsewana.entity;
 
+import java.io.Serializable;
+
 /**
  * @author : Yasiru Dahanayaka
  * @name : Sipsewana
@@ -8,5 +10,5 @@ package lk.ijse.sipsewana.entity;
  * @year : 2021
  * @since : 0.1.0
  **/
-public interface SuperEntity {
+public interface SuperEntity extends Serializable {
 }
