@@ -60,6 +60,16 @@ public class CourseController {
 
         });
 
+        tblCourse.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null){
+                txtCourseId.setText(newValue.getId());
+                txtCourseName.setText(newValue.getName());
+                cmbDuration.setValue(newValue.getDuration());
+                txtCourseFee.setText(String.valueOf(newValue.getFee()));
+                btnSave.setDisable(true);
+            }
+        });
+
     }
 
     private void loadAllItems(){
@@ -81,9 +91,46 @@ public class CourseController {
     }
 
     public void deleteOnAction(ActionEvent actionEvent) {
+
+        String id = tblCourse.getSelectionModel().getSelectedItem().getId();
+
+        try {
+            if(!existCourse(id)){
+                new Alert(Alert.AlertType.ERROR,"There is no such student associated with the id " + id).show();
+            }else {
+                new Alert(Alert.AlertType.CONFIRMATION, "Deleted..!").show();
+                courseBO.deleteCourse(id);
+                tblCourse.getItems().remove(tblCourse.getSelectionModel().getSelectedItem());
+                tblCourse.getSelectionModel().clearSelection();
+                initiUi();
+                btnSave.setDisable(false);
+            }
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR, "Failed to delete the student " + id).show();
+        }
     }
 
     public void updateOnAction(ActionEvent actionEvent) {
+        String courseId = txtCourseId.getText();
+        String name = txtCourseName.getText();
+        String duration = cmbDuration.getValue().toString();
+        double fee = Double.parseDouble(txtCourseFee.getText());
+
+        try {
+            if (!existCourse(courseId)) {
+                new Alert(Alert.AlertType.ERROR, courseId + " There is no such student associated with the id " + courseId).show();
+            }else {
+                new Alert(Alert.AlertType.CONFIRMATION, "Updated...!");
+                initiUi();
+                CourseDTO courseDTO = new CourseDTO(courseId, name, duration, fee);
+
+                    courseBO.updateCourse(courseDTO);
+                    btnSave.setDisable(false);
+                    tblCourse.refresh();
+            }
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR, "Failed to update the student " + courseId + e.getMessage()).show();
+        }
     }
 
     public void SaveOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
@@ -130,7 +177,6 @@ public class CourseController {
 
     private boolean existCourse(String courseID) throws SQLException, ClassNotFoundException {
             return courseBO.ifCourseExists(courseID);
-
     }
 
     private void initiUi(){
