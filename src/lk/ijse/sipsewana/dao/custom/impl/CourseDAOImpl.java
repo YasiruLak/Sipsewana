@@ -131,4 +131,45 @@ public class CourseDAOImpl implements CourseDAO {
 
         return false;
     }
+
+    @Override
+    public Course getCourseDetail(String code) {
+
+        Session session = FactoryConfiguration.getInstance().getSession();
+
+        Transaction transaction = session.beginTransaction();
+
+        Query query = session.createQuery("FROM Course WHERE id =: code");
+
+        Course course = (Course) query.setParameter("code", code).uniqueResult();
+
+        transaction.commit();
+
+        session.close();
+
+        return course;
+
+
+    }
+
+    @Override
+    public List <String>getCourse() {
+
+        ArrayList<String> allCourses = new ArrayList();
+
+        Session session = FactoryConfiguration.getInstance().getSession();
+
+        Transaction transaction = session.beginTransaction();
+
+        Query query = session.createQuery("SELECT id FROM Course");
+
+        allCourses = (ArrayList<String>) query.list();
+
+        transaction.commit();
+
+        session.close();
+
+        return allCourses;
+    }
+
 }

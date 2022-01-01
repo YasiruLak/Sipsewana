@@ -1,7 +1,10 @@
 package lk.ijse.sipsewana.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author : Yasiru Dahanayaka
@@ -12,12 +15,16 @@ import javax.persistence.Id;
  * @since : 0.1.0
  **/
 @Entity
+@Cacheable
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Course implements  SuperEntity{
     @Id
     private String id;
     private String name;
     private String duration;
     private double fee;
+    @OneToMany(mappedBy = "course",fetch = FetchType.EAGER,cascade = CascadeType.REMOVE)
+    private List<Registration> courseInfo = new ArrayList<>();
 
     public Course() {
     }
@@ -27,6 +34,14 @@ public class Course implements  SuperEntity{
         this.name = name;
         this.duration = duration;
         this.fee = fee;
+    }
+
+    public Course(String id, String name, String duration, double fee, List<Registration> courseInfo) {
+        this.id = id;
+        this.name = name;
+        this.duration = duration;
+        this.fee = fee;
+        this.courseInfo = courseInfo;
     }
 
     public String getId() {
@@ -61,6 +76,14 @@ public class Course implements  SuperEntity{
         this.fee = fee;
     }
 
+    public List<Registration> getCourseInfo() {
+        return courseInfo;
+    }
+
+    public void setCourseInfo(List<Registration> courseInfo) {
+        this.courseInfo = courseInfo;
+    }
+
     @Override
     public String toString() {
         return "Course{" +
@@ -68,6 +91,7 @@ public class Course implements  SuperEntity{
                 ", name='" + name + '\'' +
                 ", duration='" + duration + '\'' +
                 ", fee=" + fee +
+                ", courseInfo=" + courseInfo +
                 '}';
     }
 }

@@ -6,7 +6,6 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -16,226 +15,170 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="750.0" prefWidth="1076.0" style="-fx-background-color: #89aec9;" stylesheets="@style/StyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.sipsewana.controller.RegistrationController">
-   <children>
-      <Label alignment="CENTER" layoutX="414.0" layoutY="9.0" prefHeight="46.0" prefWidth="648.0" styleClass="liner-title" text="STUDENT REGISTRATION" textFill="WHITE">
-         <font>
-            <Font name="Times New Roman Bold" size="32.0" />
-         </font>
-      </Label>
-      <Label layoutX="46.0" layoutY="168.0" prefHeight="30.0" prefWidth="119.0" text="Full Name :">
-         <font>
-            <Font name="Cambria" size="20.0" />
-         </font>
-      </Label>
-      <JFXTextField focusColor="WHITE" layoutX="165.0" layoutY="153.0" prefHeight="38.0" prefWidth="402.0" unFocusColor="BLACK">
-         <font>
-            <Font name="Cambria" size="18.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </JFXTextField>
-      <Label layoutX="46.0" layoutY="272.0" prefHeight="30.0" prefWidth="145.0" text="Date Of Birth :">
-         <font>
-            <Font name="Cambria" size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="46.0" layoutY="324.0" prefHeight="30.0" prefWidth="102.0" text="Gender :">
-         <font>
-            <Font name="Cambria" size="20.0" />
-         </font>
-      </Label>
-      <JFXButton buttonType="RAISED" layoutX="520.0" layoutY="422.0" prefHeight="38.0" prefWidth="173.0" styleClass="button-add" text="Save " textFill="WHITE">
-         <ripplerFill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop color="#0dff00" />
-                  <Stop color="WHITE" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </ripplerFill>
-         <font>
-            <Font name="Cambria Bold" size="24.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="693.0" layoutY="422.0" prefHeight="38.0" prefWidth="173.0" styleClass="button-update" text="Update " textFill="WHITE">
-         <ripplerFill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop color="#0dff00" />
-                  <Stop color="WHITE" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </ripplerFill>
-         <font>
-            <Font name="Cambria Bold" size="24.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="866.0" layoutY="422.0" prefHeight="38.0" prefWidth="173.0" styleClass="button-delete" text="Delete " textFill="WHITE">
-         <ripplerFill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop color="#0dff00" />
-                  <Stop color="WHITE" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </ripplerFill>
-         <font>
-            <Font name="Cambria Bold" size="24.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
-      <TableView layoutX="23.0" layoutY="482.0" prefHeight="254.0" prefWidth="1033.0">
-         <columns>
-            <TableColumn prefWidth="195.0" text="Name" />
-            <TableColumn prefWidth="265.0" text="Address" />
-            <TableColumn prefWidth="132.0" text="Date Of Birth" />
-            <TableColumn prefWidth="98.0" text="Gender" />
-            <TableColumn prefWidth="140.0" text="Contact" />
-            <TableColumn prefWidth="202.0" text="Email" />
-         </columns>
-      </TableView>
-      <Label layoutX="38.0" layoutY="25.0" text="Reg No :">
-         <font>
-            <Font name="Cambria Bold" size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="141.0" layoutY="25.0" text="R0001">
-         <font>
-            <Font name="Cambria Bold" size="24.0" />
-         </font>
-      </Label>
-      <JFXDatePicker defaultColor="#357cee" layoutX="201.0" layoutY="256.0" prefHeight="38.0" prefWidth="261.0">
-         <cursor>
-            <Cursor fx:constant="OPEN_HAND" />
-         </cursor>
-      </JFXDatePicker>
-      <RadioButton layoutX="150.0" layoutY="324.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="59.0" text="Male">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </RadioButton>
-      <RadioButton layoutX="217.0" layoutY="324.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="74.0" text="Female">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </RadioButton>
-      <Separator layoutX="22.0" layoutY="70.0" prefHeight="2.0" prefWidth="1033.0" />
-      <Label layoutX="46.0" layoutY="217.0" prefHeight="30.0" prefWidth="119.0" text="Address :">
-         <font>
-            <Font name="Cambria" size="20.0" />
-         </font>
-      </Label>
-      <JFXTextField focusColor="WHITE" layoutX="165.0" layoutY="202.0" prefHeight="38.0" prefWidth="402.0" unFocusColor="BLACK">
-         <font>
-            <Font name="Cambria" size="18.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </JFXTextField>
-      <Label layoutX="46.0" layoutY="377.0" prefHeight="30.0" prefWidth="119.0" text="Contact :">
-         <font>
-            <Font name="Cambria" size="20.0" />
-         </font>
-      </Label>
-      <JFXTextField focusColor="WHITE" layoutX="165.0" layoutY="362.0" prefHeight="38.0" prefWidth="261.0" unFocusColor="BLACK">
-         <font>
-            <Font name="Cambria" size="18.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </JFXTextField>
-      <Label layoutX="46.0" layoutY="428.0" prefHeight="30.0" prefWidth="119.0" text="Email :">
-         <font>
-            <Font name="Cambria" size="20.0" />
-         </font>
-      </Label>
-      <JFXTextField focusColor="WHITE" layoutX="165.0" layoutY="413.0" prefHeight="38.0" prefWidth="301.0" unFocusColor="BLACK">
-         <font>
-            <Font name="Cambria" size="18.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </JFXTextField>
-      <Separator layoutX="601.0" layoutY="89.0" orientation="VERTICAL" prefHeight="320.0" prefWidth="3.0" />
-      <Label layoutX="650.0" layoutY="160.0" prefHeight="30.0" prefWidth="131.0" text="Program ID :">
-         <font>
-            <Font name="Cambria" size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="650.0" layoutY="220.0" prefHeight="30.0" prefWidth="88.0" text="Name :">
-         <font>
-            <Font name="Cambria" size="20.0" />
-         </font>
-      </Label>
-      <JFXTextField focusColor="WHITE" layoutX="737.0" layoutY="205.0" prefHeight="38.0" prefWidth="301.0" unFocusColor="BLACK">
-         <font>
-            <Font name="Cambria" size="18.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </JFXTextField>
-      <Label layoutX="650.0" layoutY="287.0" prefHeight="30.0" prefWidth="119.0" text="Duration :">
-         <font>
-            <Font name="Cambria" size="20.0" />
-         </font>
-      </Label>
-      <JFXTextField focusColor="WHITE" layoutX="778.0" layoutY="272.0" prefHeight="38.0" prefWidth="261.0" unFocusColor="BLACK">
-         <font>
-            <Font name="Cambria" size="18.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </JFXTextField>
-      <Label layoutX="650.0" layoutY="354.0" prefHeight="30.0" prefWidth="112.0" text="Fee(LKR) :">
-         <font>
-            <Font name="Cambria" size="20.0" />
-         </font>
-      </Label>
-      <JFXTextField focusColor="WHITE" layoutX="769.0" layoutY="339.0" prefHeight="38.0" prefWidth="269.0" unFocusColor="BLACK">
-         <font>
-            <Font name="Cambria" size="18.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </JFXTextField>
-      <JFXComboBox focusColor="WHITE" layoutX="777.0" layoutY="151.0" prefHeight="38.0" prefWidth="261.0" promptText="Select Program ID" unFocusColor="BLACK">
-         <cursor>
-            <Cursor fx:constant="OPEN_HAND" />
-         </cursor>
-      </JFXComboBox>
-      <Label layoutX="46.0" layoutY="121.0" prefHeight="30.0" prefWidth="119.0" text="Student ID :">
-         <font>
-            <Font name="Cambria" size="20.0" />
-         </font>
-      </Label>
-      <JFXTextField focusColor="WHITE" layoutX="165.0" layoutY="106.0" prefHeight="38.0" prefWidth="402.0" unFocusColor="BLACK">
-         <font>
-            <Font name="Cambria" size="18.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </JFXTextField>
-   </children>
+    <children>
+        <Label alignment="CENTER" layoutX="414.0" layoutY="9.0" prefHeight="46.0" prefWidth="648.0" styleClass="liner-title" text="STUDENT REGISTRATION" textFill="WHITE">
+            <font>
+                <Font name="Times New Roman Bold" size="32.0" />
+            </font>
+        </Label>
+        <Label layoutX="46.0" layoutY="168.0" prefHeight="30.0" prefWidth="119.0" text="Name :">
+            <font>
+                <Font name="Cambria" size="20.0" />
+            </font>
+        </Label>
+        <JFXTextField fx:id="txtStudentName" focusColor="WHITE" layoutX="165.0" layoutY="153.0" prefHeight="38.0" prefWidth="402.0" unFocusColor="BLACK">
+            <font>
+                <Font name="Cambria" size="18.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="TEXT" />
+            </cursor>
+        </JFXTextField>
+        <Label layoutX="46.0" layoutY="272.0" prefHeight="30.0" prefWidth="145.0" text="Date Of Birth :">
+            <font>
+                <Font name="Cambria" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="46.0" layoutY="324.0" prefHeight="30.0" prefWidth="102.0" text="Gender :">
+            <font>
+                <Font name="Cambria" size="20.0" />
+            </font>
+        </Label>
+        <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="855.0" layoutY="420.0" onAction="#saveOnAction" prefHeight="38.0" prefWidth="173.0" styleClass="button-add" text="Register" textFill="WHITE">
+            <ripplerFill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop color="#0dff00" />
+                        <Stop color="WHITE" offset="1.0" />
+                    </stops>
+                </LinearGradient>
+            </ripplerFill>
+            <font>
+                <Font name="Cambria Bold" size="24.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <TableView layoutX="23.0" layoutY="482.0" prefHeight="254.0" prefWidth="1033.0">
+            <columns>
+                <TableColumn prefWidth="195.0" text="Name" />
+                <TableColumn prefWidth="265.0" text="Address" />
+                <TableColumn prefWidth="132.0" text="Date Of Birth" />
+                <TableColumn prefWidth="98.0" text="Gender" />
+                <TableColumn prefWidth="140.0" text="Contact" />
+                <TableColumn prefWidth="202.0" text="Email" />
+            </columns>
+        </TableView>
+        <Label layoutX="38.0" layoutY="25.0" text="Reg No :">
+            <font>
+                <Font name="Cambria Bold" size="24.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblRegNo" layoutX="141.0" layoutY="25.0" text="R0001">
+            <font>
+                <Font name="Cambria Bold" size="24.0" />
+            </font>
+        </Label>
+        <JFXDatePicker fx:id="dpkDateOfBirth" defaultColor="#357cee" layoutX="201.0" layoutY="256.0" prefHeight="38.0" prefWidth="261.0">
+            <cursor>
+                <Cursor fx:constant="OPEN_HAND" />
+            </cursor>
+        </JFXDatePicker>
+        <Separator layoutX="22.0" layoutY="70.0" prefHeight="2.0" prefWidth="1033.0" />
+        <Label layoutX="46.0" layoutY="217.0" prefHeight="30.0" prefWidth="119.0" text="Address :">
+            <font>
+                <Font name="Cambria" size="20.0" />
+            </font>
+        </Label>
+        <JFXTextField fx:id="txtAddress" focusColor="WHITE" layoutX="165.0" layoutY="202.0" prefHeight="38.0" prefWidth="402.0" unFocusColor="BLACK">
+            <font>
+                <Font name="Cambria" size="18.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="TEXT" />
+            </cursor>
+        </JFXTextField>
+        <Label layoutX="46.0" layoutY="377.0" prefHeight="30.0" prefWidth="119.0" text="Contact :">
+            <font>
+                <Font name="Cambria" size="20.0" />
+            </font>
+        </Label>
+        <JFXTextField fx:id="txtContactNo" focusColor="WHITE" layoutX="165.0" layoutY="362.0" prefHeight="38.0" prefWidth="261.0" unFocusColor="BLACK">
+            <font>
+                <Font name="Cambria" size="18.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="TEXT" />
+            </cursor>
+        </JFXTextField>
+        <Separator layoutX="601.0" layoutY="89.0" orientation="VERTICAL" prefHeight="320.0" prefWidth="3.0" />
+        <Label layoutX="650.0" layoutY="160.0" prefHeight="30.0" prefWidth="131.0" text="Course ID :">
+            <font>
+                <Font name="Cambria" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="650.0" layoutY="220.0" prefHeight="30.0" prefWidth="88.0" text="Name :">
+            <font>
+                <Font name="Cambria" size="20.0" />
+            </font>
+        </Label>
+        <JFXTextField fx:id="txtCourseName" focusColor="WHITE" layoutX="737.0" layoutY="205.0" prefHeight="38.0" prefWidth="301.0" unFocusColor="BLACK">
+            <font>
+                <Font name="Cambria" size="18.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="TEXT" />
+            </cursor>
+        </JFXTextField>
+        <Label layoutX="650.0" layoutY="287.0" prefHeight="30.0" prefWidth="119.0" text="Duration :">
+            <font>
+                <Font name="Cambria" size="20.0" />
+            </font>
+        </Label>
+        <JFXTextField fx:id="txtCourseDuration" focusColor="WHITE" layoutX="778.0" layoutY="272.0" prefHeight="38.0" prefWidth="261.0" unFocusColor="BLACK">
+            <font>
+                <Font name="Cambria" size="18.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="TEXT" />
+            </cursor>
+        </JFXTextField>
+        <Label layoutX="650.0" layoutY="354.0" prefHeight="30.0" prefWidth="112.0" text="Fee(LKR) :">
+            <font>
+                <Font name="Cambria" size="20.0" />
+            </font>
+        </Label>
+        <JFXTextField fx:id="txtCourseFee" focusColor="WHITE" layoutX="769.0" layoutY="339.0" prefHeight="38.0" prefWidth="269.0" unFocusColor="BLACK">
+            <font>
+                <Font name="Cambria" size="18.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="TEXT" />
+            </cursor>
+        </JFXTextField>
+        <JFXComboBox fx:id="cmbCourseId" focusColor="WHITE" layoutX="777.0" layoutY="151.0" prefHeight="38.0" prefWidth="261.0" promptText="Select Course" unFocusColor="BLACK">
+            <cursor>
+                <Cursor fx:constant="OPEN_HAND" />
+            </cursor>
+        </JFXComboBox>
+        <Label layoutX="46.0" layoutY="121.0" prefHeight="30.0" prefWidth="119.0" text="NIC No">
+            <font>
+                <Font name="Cambria" size="20.0" />
+            </font>
+        </Label>
+        <JFXTextField fx:id="txtStudentNic" focusColor="WHITE" layoutX="165.0" layoutY="106.0" prefHeight="38.0" prefWidth="402.0" unFocusColor="BLACK">
+            <font>
+                <Font name="Cambria" size="18.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="TEXT" />
+            </cursor>
+        </JFXTextField>
+        <JFXComboBox fx:id="cmbGender" focusColor="WHITE" layoutX="165.0" layoutY="320.0" prefHeight="38.0" prefWidth="261.0" promptText="Select Gender" unFocusColor="BLACK">
+            <cursor>
+                <Cursor fx:constant="OPEN_HAND" />
+            </cursor>
+        </JFXComboBox>
+    </children>
 </AnchorPane>

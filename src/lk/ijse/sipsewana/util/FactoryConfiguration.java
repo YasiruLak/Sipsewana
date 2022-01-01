@@ -1,6 +1,8 @@
 package lk.ijse.sipsewana.util;
 
 import lk.ijse.sipsewana.entity.Course;
+import lk.ijse.sipsewana.entity.Registration;
+import lk.ijse.sipsewana.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -25,6 +27,8 @@ public class FactoryConfiguration {
 
         Metadata meta = new MetadataSources(serviceRegistry)
                 .addAnnotatedClass(Course.class)
+                .addAnnotatedClass(Student.class)
+                .addAnnotatedClass(Registration.class)
                 .getMetadataBuilder().build();
 
         sessionFactory = meta.getSessionFactoryBuilder().build();
