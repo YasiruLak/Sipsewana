@@ -1,6 +1,7 @@
 package lk.ijse.sipsewana.bo;
 
 import lk.ijse.sipsewana.bo.custom.impl.CourseBOImpl;
+import lk.ijse.sipsewana.bo.custom.impl.RegistrationBOImpl;
 import lk.ijse.sipsewana.bo.custom.impl.StudentBOImpl;
 
 /**
@@ -14,7 +15,7 @@ import lk.ijse.sipsewana.bo.custom.impl.StudentBOImpl;
 public class BOFactory {
 
     public enum BOType{
-        COURSE, STUDENT
+        COURSE, STUDENT, REGISTRATION
     }
 
     private static BOFactory boFactory;
@@ -32,6 +33,8 @@ public class BOFactory {
                 return (T) new CourseBOImpl();
             case STUDENT:
                 return (T) new StudentBOImpl();
+            case REGISTRATION:
+                return (T) new RegistrationBOImpl();
             default:
                 return null;
         }

@@ -4,6 +4,8 @@ import lk.ijse.sipsewana.dao.CrudDAO;
 import lk.ijse.sipsewana.dao.SuperDAO;
 import lk.ijse.sipsewana.entity.Student;
 
+import java.sql.SQLException;
+
 /**
  * @author : Yasiru Dahanayaka
  * @name : Sipsewana
@@ -13,4 +15,6 @@ import lk.ijse.sipsewana.entity.Student;
  * @since : 0.1.0
  **/
 public interface StudentDAO extends CrudDAO <Student, String> {
+    boolean ifStudentExist(String id) throws SQLException, ClassNotFoundException;
+    String getStudentName(String id) throws SQLException, ClassNotFoundException;
 }

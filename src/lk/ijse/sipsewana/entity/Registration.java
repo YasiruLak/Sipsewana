@@ -18,8 +18,8 @@ import java.time.LocalDate;
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Registration implements SuperEntity{
     @Id
-    private String RegId;
-    private LocalDate RegDate;
+    private String regId;
+    private LocalDate regDate;
     @ManyToOne
     private Student student;
     @ManyToOne
@@ -29,26 +29,26 @@ public class Registration implements SuperEntity{
     }
 
     public Registration(String regId, LocalDate regDate, Student student, Course course) {
-        RegId = regId;
-        RegDate = regDate;
+        this.regId = regId;
+        this.regDate = regDate;
         this.student = student;
         this.course = course;
     }
 
     public String getRegId() {
-        return RegId;
+        return regId;
     }
 
     public void setRegId(String regId) {
-        RegId = regId;
+        this.regId = regId;
     }
 
     public LocalDate getRegDate() {
-        return RegDate;
+        return regDate;
     }
 
     public void setRegDate(LocalDate regDate) {
-        RegDate = regDate;
+        this.regDate = regDate;
     }
 
     public Student getStudent() {
@@ -70,8 +70,8 @@ public class Registration implements SuperEntity{
     @Override
     public String toString() {
         return "Registration{" +
-                "RegId='" + RegId + '\'' +
-                ", RegDate=" + RegDate +
+                "regId='" + regId + '\'' +
+                ", regDate=" + regDate +
                 ", student=" + student +
                 ", course=" + course +
                 '}';

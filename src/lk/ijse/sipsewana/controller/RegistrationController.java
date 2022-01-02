@@ -4,8 +4,6 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
@@ -29,7 +27,6 @@ public class RegistrationController {
     public JFXDatePicker dpkDateOfBirth;
     public JFXTextField txtAddress;
     public JFXTextField txtContactNo;
-    public JFXTextField txtEmail;
     public JFXTextField txtCourseName;
     public JFXTextField txtCourseDuration;
     public JFXTextField txtCourseFee;
