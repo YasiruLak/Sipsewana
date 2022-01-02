@@ -1,5 +1,7 @@
 package lk.ijse.sipsewana.dto;
 
+import java.time.LocalDate;
+
 /**
  * @author : Yasiru Dahanayaka
  * @name : Sipsewana
@@ -12,14 +14,23 @@ public class StudentDTO {
     private String niceNo;
     private String name;
     private String address;
-    private String dateOfBirth;
+    private LocalDate dateOfBirth;
     private String gender;
     private String contact;
 
     public StudentDTO() {
     }
 
-    public StudentDTO(String niceNo, String name, String address, String dateOfBirth, String gender, String contact) {
+    public StudentDTO(String niceNo, String name, String address, LocalDate dateOfBirth, String gender, String contact) {
+        this.niceNo = niceNo;
+        this.name = name;
+        this.address = address;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+        this.contact = contact;
+    }
+
+    public StudentDTO(String nic, String name, String address, String dob, String gender, String contact) {
         this.niceNo = niceNo;
         this.name = name;
         this.address = address;
@@ -52,11 +63,11 @@ public class StudentDTO {
         this.address = address;
     }
 
-    public String getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

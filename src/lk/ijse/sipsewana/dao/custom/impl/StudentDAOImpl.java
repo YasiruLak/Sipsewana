@@ -21,6 +21,21 @@ import java.util.List;
  **/
 public class StudentDAOImpl implements StudentDAO {
 
+    public static List<Student> searchStudent(String s) throws SQLException, ClassNotFoundException {
+
+        Session session = FactoryConfiguration.getInstance().getSession();
+
+        Transaction transaction = session.beginTransaction();
+
+        List<Student> student = session.createQuery("FROM Student WHERE niceNo LIKE '%" + s + "%' or name LIKE '%" + s + "%'").list();
+
+        transaction.commit();
+
+        session.close();
+
+        return student;
+    }
+
     @Override
     public boolean add(Student entity) throws Exception {
 
@@ -72,7 +87,7 @@ public class StudentDAOImpl implements StudentDAO {
     }
 
     @Override
-    public Student search(String s) throws Exception {
+    public Student search(String s){
 
         Session session = FactoryConfiguration.getInstance().getSession();
 
@@ -113,7 +128,7 @@ public class StudentDAOImpl implements StudentDAO {
     }
 
     @Override
-    public boolean ifStudentExist(String id) throws SQLException, ClassNotFoundException {
+    public boolean ifStudentExist(String id){
 
         Session session = FactoryConfiguration.getInstance().getSession();
 

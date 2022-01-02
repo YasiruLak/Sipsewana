@@ -36,7 +36,7 @@ public class RegisterDAOImpl implements RegisterDAO {
     }
 
     @Override
-    public Registration search(String s) throws Exception {
+    public Registration search(String s) {
         return null;
     }
 
@@ -51,7 +51,7 @@ public class RegisterDAOImpl implements RegisterDAO {
     }
 
     @Override
-    public boolean ifRegExist(String id) throws SQLException, ClassNotFoundException {
+    public boolean ifRegExist(String id){
 
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
@@ -66,7 +66,7 @@ public class RegisterDAOImpl implements RegisterDAO {
     }
 
     @Override
-    public String generateNewID() throws SQLException, ClassNotFoundException {
+    public String generateNewID(){
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
         Query query = session.createQuery("SELECT regId FROM Registration ORDER BY regId DESC LIMIT 1");

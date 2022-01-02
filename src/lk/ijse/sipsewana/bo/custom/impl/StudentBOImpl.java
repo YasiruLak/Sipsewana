@@ -2,7 +2,6 @@ package lk.ijse.sipsewana.bo.custom.impl;
 
 import lk.ijse.sipsewana.bo.custom.StudentBO;
 import lk.ijse.sipsewana.dao.DAOFactory;
-import lk.ijse.sipsewana.dao.custom.CourseDAO;
 import lk.ijse.sipsewana.dao.custom.StudentDAO;
 import lk.ijse.sipsewana.dto.StudentDTO;
 import lk.ijse.sipsewana.entity.Student;

@@ -8,7 +8,7 @@ package lk.ijse.sipsewana.view.tm;
  * @year : 2021
  * @since : 0.1.0
  **/
-public class CourseTM {
+public class CourseTM implements Comparable<CourseTM>{
     private String id;
     private String name;
     private String duration;
@@ -64,5 +64,10 @@ public class CourseTM {
                 ", duration='" + duration + '\'' +
                 ", fee=" + fee +
                 '}';
+    }
+
+    @Override
+    public int compareTo(CourseTM o) {
+        return id.compareTo(o.getId());
     }
 }

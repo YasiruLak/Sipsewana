@@ -12,6 +12,7 @@ import lk.ijse.sipsewana.bo.BOFactory;
 import lk.ijse.sipsewana.bo.custom.CourseBO;
 import lk.ijse.sipsewana.dto.CourseDTO;
 import lk.ijse.sipsewana.view.tm.CourseTM;
+import lk.ijse.sipsewana.view.tm.StudentTM;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -131,6 +132,13 @@ public class CourseController {
         } catch (Exception e) {
             new Alert(Alert.AlertType.ERROR, "Failed to update the student " + courseId + e.getMessage()).show();
         }
+
+        CourseTM selectedCourse = tblCourse.getSelectionModel().getSelectedItem();
+        selectedCourse.setName(name);
+        selectedCourse.setDuration(duration);
+        selectedCourse.setFee(fee);
+        selectedCourse.setId(courseId);
+        tblCourse.refresh();
     }
 
     public void SaveOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
