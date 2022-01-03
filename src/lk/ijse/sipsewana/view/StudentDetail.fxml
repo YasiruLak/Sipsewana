@@ -15,9 +15,9 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="context" prefHeight="750.0" prefWidth="1076.0" stylesheets="@style/StyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.sipsewana.controller.StudentDetailController">
+<AnchorPane fx:id="context" prefHeight="750.0" prefWidth="1076.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.sipsewana.controller.StudentDetailController">
     <children>
-        <TableView fx:id="tblStudent" layoutX="17.0" layoutY="503.0" prefHeight="224.0" prefWidth="1044.0">
+        <TableView fx:id="tblStudent" layoutX="17.0" layoutY="503.0" prefHeight="224.0" prefWidth="1044.0" stylesheets="@style/StyleSheet.css">
             <columns>
                 <TableColumn fx:id="colNic" prefWidth="144.00003051757812" text="NIC No" />
                 <TableColumn fx:id="colName" prefWidth="228.0" text="Name" />
@@ -97,7 +97,7 @@
                 <Cursor fx:constant="TEXT" />
             </cursor>
         </JFXTextField>
-        <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="614.0" layoutY="437.0" onAction="#SaveOnAction" prefHeight="46.0" prefWidth="146.0" styleClass="button-add" text="Save ">
+        <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="614.0" layoutY="437.0" onAction="#SaveOnAction" prefHeight="46.0" prefWidth="146.0" styleClass="button-add" stylesheets="@style/StyleSheet.css" text="Save ">
             <ripplerFill>
                 <LinearGradient endX="1.0" endY="1.0">
                     <stops>
@@ -113,7 +113,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </JFXButton>
-        <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="760.0" layoutY="437.0" onAction="#updateOnAction" prefHeight="46.0" prefWidth="146.0" styleClass="button-update" text="Update ">
+        <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="760.0" layoutY="437.0" onAction="#updateOnAction" prefHeight="46.0" prefWidth="146.0" styleClass="button-update" stylesheets="@style/StyleSheet.css" text="Update ">
             <ripplerFill>
                 <LinearGradient endX="1.0" endY="1.0">
                     <stops>
@@ -129,7 +129,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </JFXButton>
-        <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="906.0" layoutY="437.0" onAction="#deleteOnAction" prefHeight="46.0" prefWidth="146.0" styleClass="button-delete" text="Delete ">
+        <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="906.0" layoutY="437.0" onAction="#deleteOnAction" prefHeight="46.0" prefWidth="146.0" styleClass="button-delete" stylesheets="@style/StyleSheet.css" text="Delete ">
             <ripplerFill>
                 <LinearGradient endX="1.0" endY="1.0">
                     <stops>

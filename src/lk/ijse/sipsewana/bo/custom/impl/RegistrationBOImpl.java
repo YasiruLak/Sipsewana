@@ -8,6 +8,12 @@ import lk.ijse.sipsewana.dao.custom.RegisterDAO;
 import lk.ijse.sipsewana.dao.custom.StudentDAO;
 import lk.ijse.sipsewana.dto.CustomDTO;
 import lk.ijse.sipsewana.dto.RegistrationDTO;
+import lk.ijse.sipsewana.entity.Course;
+import lk.ijse.sipsewana.entity.Registration;
+import lk.ijse.sipsewana.entity.Student;
+import lk.ijse.sipsewana.util.FactoryConfiguration;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -28,7 +34,25 @@ public class RegistrationBOImpl implements RegistrationBO {
 
     @Override
     public boolean registerDetails(RegistrationDTO dto){
-        return false;
+
+        Session session = FactoryConfiguration.getInstance().getSession();
+
+        Transaction transaction = session.beginTransaction();
+
+        Student student = session.get(Student.class, dto.getsNic());
+
+        Course program = session.get(Course.class, dto.getcId());
+        
+
+        Registration register = new Registration(dto.getRegId(), dto.getRegDate(), student, program);
+
+        session.save(register);
+
+        transaction.commit();
+
+        session.close();
+
+        return true;
     }
 
     @Override

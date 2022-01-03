@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -27,17 +28,21 @@ public class LoginPgController {
 
     public void btnLoginOnAction(ActionEvent actionEvent) throws IOException {
 
-        Stage logStage = (Stage) btnLogin.getScene().getWindow();
-        logStage.close();
 
-        URL resource = this.getClass().getResource("../view/Dashboard.fxml");
-        Parent load = FXMLLoader.load(resource);
-        Scene scene = new Scene(load);
-        Stage stage = new Stage();
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.centerOnScreen();
-        stage.setScene(scene);
-        stage.show();
+        if (txtUserName.getText().equals("Yasiru") & pswPassword.getText().equals("19980611")){
+            Stage logStage = (Stage) btnLogin.getScene().getWindow();
+            logStage.close();
 
+            URL resource = this.getClass().getResource("../view/Dashboard.fxml");
+            Parent load = FXMLLoader.load(resource);
+            Scene scene = new Scene(load);
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.centerOnScreen();
+            stage.setScene(scene);
+            stage.show();
+        }else{
+            new Alert(Alert.AlertType.ERROR, " Password or User Name Incorrect ").show();
+        }
     }
 }

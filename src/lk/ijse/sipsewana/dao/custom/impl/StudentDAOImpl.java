@@ -27,7 +27,7 @@ public class StudentDAOImpl implements StudentDAO {
 
         Transaction transaction = session.beginTransaction();
 
-        List<Student> student = session.createQuery("FROM Student WHERE niceNo LIKE '%" + s + "%' or name LIKE '%" + s + "%'").list();
+        List<Student> student = session.createQuery("FROM Student WHERE niceNo LIKE '%" + s + "%' or sName LIKE '%" + s + "%'").list();
 
         transaction.commit();
 
@@ -156,7 +156,7 @@ public class StudentDAOImpl implements StudentDAO {
 
         Transaction transaction = session.beginTransaction();
 
-        Query query = session.createQuery("SELECT name FROM Student WHERE niceNo=:id");
+        Query query = session.createQuery("SELECT sName FROM Student WHERE niceNo=:id");
 
         String id1 = (String) query.setParameter("id", id).uniqueResult();
 

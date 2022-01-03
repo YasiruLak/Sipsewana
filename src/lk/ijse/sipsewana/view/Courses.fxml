@@ -13,127 +13,117 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="750.0" prefWidth="1076.0"
-            style="-fx-background-color: #89aec9;" stylesheets="@style/StyleSheet.css"
-            xmlns="http://javafx.com/javafx/8.0.171" fx:controller="lk.ijse.sipsewana.controller.CourseController">
+<AnchorPane prefHeight="750.0" prefWidth="1076.0" stylesheets="@style/StyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.sipsewana.controller.CourseController">
     <children>
-        <Label alignment="CENTER" layoutX="11.0" layoutY="3.0" prefHeight="56.0" prefWidth="1058.0"
-               styleClass="liner-title" text="COURSES" textFill="WHITE">
+        <Label alignment="CENTER" layoutX="11.0" layoutY="3.0" prefHeight="56.0" prefWidth="1058.0" styleClass="liner-title" text="COURSES">
             <font>
-                <Font name="Times New Roman Bold" size="32.0"/>
+                <Font name="Times New Roman Bold" size="32.0" />
             </font>
         </Label>
-        <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="520.0" layoutY="314.0" onAction="#SaveOnAction"
-                   prefHeight="38.0" prefWidth="173.0" styleClass="button-add" text="Save " textFill="WHITE">
+        <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="520.0" layoutY="314.0" onAction="#SaveOnAction" prefHeight="38.0" prefWidth="173.0" styleClass="button-add" text="Save ">
             <ripplerFill>
                 <LinearGradient endX="1.0" endY="1.0">
                     <stops>
-                        <Stop color="#0dff00"/>
-                        <Stop color="WHITE" offset="1.0"/>
+                        <Stop color="#0dff00" />
+                        <Stop color="WHITE" offset="1.0" />
                     </stops>
                 </LinearGradient>
             </ripplerFill>
             <font>
-                <Font name="Cambria Bold" size="24.0"/>
+                <Font name="Cambria Bold" size="24.0" />
             </font>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </JFXButton>
-        <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="693.0" layoutY="314.0" onAction="#updateOnAction"
-                   prefHeight="38.0" prefWidth="173.0" styleClass="button-update" text="Update " textFill="WHITE">
+        <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="693.0" layoutY="314.0" onAction="#updateOnAction" prefHeight="38.0" prefWidth="173.0" styleClass="button-update" text="Update ">
             <ripplerFill>
                 <LinearGradient endX="1.0" endY="1.0">
                     <stops>
-                        <Stop color="#0dff00"/>
-                        <Stop color="WHITE" offset="1.0"/>
+                        <Stop color="#0dff00" />
+                        <Stop color="WHITE" offset="1.0" />
                     </stops>
                 </LinearGradient>
             </ripplerFill>
             <font>
-                <Font name="Cambria Bold" size="24.0"/>
+                <Font name="Cambria Bold" size="24.0" />
             </font>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </JFXButton>
-        <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="866.0" layoutY="314.0" onAction="#deleteOnAction"
-                   prefHeight="38.0" prefWidth="173.0" styleClass="button-delete" text="Delete " textFill="WHITE">
+        <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="866.0" layoutY="314.0" onAction="#deleteOnAction" prefHeight="38.0" prefWidth="173.0" styleClass="button-delete" text="Delete ">
             <ripplerFill>
                 <LinearGradient endX="1.0" endY="1.0">
                     <stops>
-                        <Stop color="#0dff00"/>
-                        <Stop color="WHITE" offset="1.0"/>
+                        <Stop color="#0dff00" />
+                        <Stop color="WHITE" offset="1.0" />
                     </stops>
                 </LinearGradient>
             </ripplerFill>
             <font>
-                <Font name="Cambria Bold" size="24.0"/>
+                <Font name="Cambria Bold" size="24.0" />
             </font>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </JFXButton>
         <TableView fx:id="tblCourse" layoutX="31.0" layoutY="380.0" prefHeight="341.0" prefWidth="1008.0">
             <columns>
-                <TableColumn fx:id="colId" prefWidth="169.0" text="Program Id"/>
-                <TableColumn fx:id="colName" prefWidth="412.0" text="Program Name"/>
-                <TableColumn fx:id="colDuration" prefWidth="185.0" text="Duration"/>
-                <TableColumn fx:id="colFee" prefWidth="241.0" text="Fee(LKR)"/>
+                <TableColumn fx:id="colId" prefWidth="169.0" text="Program Id" />
+                <TableColumn fx:id="colName" prefWidth="412.0" text="Program Name" />
+                <TableColumn fx:id="colDuration" prefWidth="185.0" text="Duration" />
+                <TableColumn fx:id="colFee" prefWidth="241.0" text="Fee(LKR)" />
             </columns>
         </TableView>
-        <Separator layoutX="22.0" layoutY="68.0" prefHeight="2.0" prefWidth="1036.0"/>
+        <Separator layoutX="22.0" layoutY="68.0" prefHeight="2.0" prefWidth="1036.0" />
         <Label layoutX="53.0" layoutY="100.0" prefHeight="30.0" prefWidth="131.0" text="Program ID :">
             <font>
-                <Font name="Cambria" size="20.0"/>
+                <Font name="Cambria" size="20.0" />
             </font>
         </Label>
         <Label layoutX="53.0" layoutY="190.0" prefHeight="30.0" prefWidth="88.0" text="Name :">
             <font>
-                <Font name="Cambria" size="20.0"/>
+                <Font name="Cambria" size="20.0" />
             </font>
         </Label>
-        <JFXTextField fx:id="txtCourseName" focusColor="WHITE" layoutX="140.0" layoutY="175.0" prefHeight="38.0"
-                      prefWidth="328.0" unFocusColor="BLACK">
+        <JFXTextField fx:id="txtCourseName" focusColor="WHITE" layoutX="140.0" layoutY="175.0" prefHeight="38.0" prefWidth="328.0" promptText="Business Management" unFocusColor="BLACK">
             <font>
-                <Font name="Cambria" size="18.0"/>
+                <Font name="Cambria" size="18.0" />
             </font>
             <cursor>
-                <Cursor fx:constant="TEXT"/>
+                <Cursor fx:constant="TEXT" />
             </cursor>
         </JFXTextField>
         <Label layoutX="520.0" layoutY="115.0" prefHeight="30.0" prefWidth="119.0" text="Duration :">
             <font>
-                <Font name="Cambria" size="20.0"/>
+                <Font name="Cambria" size="20.0" />
             </font>
         </Label>
         <Label layoutX="520.0" layoutY="187.0" prefHeight="30.0" prefWidth="112.0" text="Fee(LKR) :">
             <font>
-                <Font name="Cambria" size="20.0"/>
+                <Font name="Cambria" size="20.0" />
             </font>
         </Label>
-        <JFXTextField fx:id="txtCourseFee" focusColor="WHITE" layoutX="639.0" layoutY="172.0" prefHeight="38.0"
-                      prefWidth="299.0" unFocusColor="BLACK">
+        <JFXTextField fx:id="txtCourseFee" focusColor="WHITE" layoutX="639.0" layoutY="172.0" prefHeight="38.0" prefWidth="299.0" promptText="90000.0" unFocusColor="BLACK">
             <font>
-                <Font name="Cambria" size="18.0"/>
+                <Font name="Cambria" size="18.0" />
             </font>
             <cursor>
-                <Cursor fx:constant="TEXT"/>
+                <Cursor fx:constant="TEXT" />
             </cursor>
         </JFXTextField>
-        <JFXComboBox fx:id="cmbDuration" layoutX="632.0" layoutY="111.0" prefHeight="38.0" prefWidth="299.0"
-                     promptText="Select Time Duration">
+        <JFXComboBox fx:id="cmbDuration" layoutX="632.0" layoutY="111.0" prefHeight="38.0" prefWidth="299.0" promptText="Select Time Duration">
             <cursor>
-                <Cursor fx:constant="OPEN_HAND"/>
+                <Cursor fx:constant="OPEN_HAND" />
             </cursor>
         </JFXComboBox>
-        <JFXTextField fx:id="txtCourseId" focusColor="WHITE" layoutX="172.0" layoutY="96.0" prefHeight="38.0"
-                      prefWidth="299.0" unFocusColor="BLACK">
+        <JFXTextField fx:id="txtCourseId" focusColor="WHITE" layoutX="172.0" layoutY="96.0" prefHeight="38.0" prefWidth="299.0" promptText="CT0###" unFocusColor="BLACK">
             <font>
-                <Font name="Cambria" size="18.0"/>
+                <Font name="Cambria" size="18.0" />
             </font>
             <cursor>
-                <Cursor fx:constant="TEXT"/>
+                <Cursor fx:constant="TEXT" />
             </cursor>
         </JFXTextField>
     </children>

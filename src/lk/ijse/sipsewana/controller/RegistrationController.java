@@ -2,22 +2,28 @@ package lk.ijse.sipsewana.controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import lk.ijse.sipsewana.bo.BOFactory;
 import lk.ijse.sipsewana.bo.custom.RegistrationBO;
 import lk.ijse.sipsewana.dao.custom.CourseDAO;
 import lk.ijse.sipsewana.dao.custom.impl.CourseDAOImpl;
 import lk.ijse.sipsewana.dao.custom.impl.StudentDAOImpl;
 import lk.ijse.sipsewana.dto.CustomDTO;
+import lk.ijse.sipsewana.dto.RegistrationDTO;
 import lk.ijse.sipsewana.dto.StudentDTO;
 import lk.ijse.sipsewana.entity.Course;
 import lk.ijse.sipsewana.view.tm.RegisterDetailTM;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -39,13 +45,14 @@ public class RegistrationController {
     public JFXComboBox cmbCourseId;
     public JFXTextField txtStudentNic;
     public JFXButton btnRegister;
-    public TableView tblDetails;
+    public TableView <RegisterDetailTM>tblDetails;
     public TableColumn colRegId;
     public TableColumn colCourseId;
     public TableColumn colCourseName;
     public TableColumn colStudentName;
     public TableColumn colDate;
     public TextField txtSearch;
+    public TableColumn colStudentId;
 
     CourseDAO courseDAO = new CourseDAOImpl();
 
@@ -56,20 +63,26 @@ public class RegistrationController {
     public void initialize(){
 
         lblRegNo.setText(generateNewId());
-        lblRegNo.setDisable(true);
-        btnRegister.setDisable(true);
         loadCourseDetail();
         loadAllDetails();
 
         colRegId.setCellValueFactory(new PropertyValueFactory<>("regId"));
+        colStudentId.setCellValueFactory(new PropertyValueFactory<>("sId"));
+        colStudentName.setCellValueFactory(new PropertyValueFactory<>("sName"));
         colCourseId.setCellValueFactory(new PropertyValueFactory<>("cId"));
         colCourseName.setCellValueFactory(new PropertyValueFactory<>("cName"));
-        colStudentName.setCellValueFactory(new PropertyValueFactory<>("sName"));
         colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
 
         cmbCourseId.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             getCourseDetails((String) newValue);
 
+        });
+
+        txtSearch.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                searchStore(newValue);
+            }
         });
     }
 
@@ -86,6 +99,19 @@ public class RegistrationController {
         } catch (ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+    }
+
+    public boolean saveRegister(String regId,String sNic, String cId, LocalDate date) {
+        try {
+            RegistrationDTO registerDTO = new RegistrationDTO(regId,sNic,cId,date);
+            return registerBO.registerDetails(registerDTO);
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     private String generateNewId() {
@@ -134,13 +160,67 @@ public class RegistrationController {
     }
 
     public void getStudent(StudentDTO studentDTO){
-        newStudent= studentDTO;
+        newStudent = studentDTO;
         if(newStudent!=null){
             txtStudentNic.setText(newStudent.getNiceNo());
             txtStudentName.setText(newStudent.getName());
         }
     }
 
+    public void getStudentName(String id) throws SQLException, ClassNotFoundException {
+        try {
+            String name = new StudentDAOImpl().getStudentName(id);
+            txtStudentName.setText(name);
+        }catch (Exception e){
+
+        }
+    }
+
+    public void searchStore(String value) {
+
+        ObservableList<RegisterDetailTM> obList = FXCollections.observableArrayList();
+
+        List<CustomDTO> detail = registerBO.searchDetail(value);
+
+        for (CustomDTO temp:detail) {
+            obList.add(new RegisterDetailTM(temp.getRegId(),temp.getsNic(),temp.getsName(),temp.getcId(),temp.getcName(),temp.getRegDate()));
+        }
+
+        tblDetails.setItems(obList);
+    }
+
     public void RegisterOnAction(ActionEvent actionEvent) {
+        boolean b = saveRegister(lblRegNo.getText(),txtStudentNic.getText(),cmbCourseId.getValue().toString(),LocalDate.now());
+
+        String id = lblRegNo.getText();
+        String nic = txtStudentNic.getText();
+        String name = txtStudentName.getText();
+        String cId = cmbCourseId.getValue().toString();
+        String cName = txtCourseName.getText();
+        LocalDate date = LocalDate.now();
+
+        if (b) {
+            new Alert(Alert.AlertType.INFORMATION, "successfully Registered").show();
+            tblDetails.getItems().add(new RegisterDetailTM(id,nic,name,cId,cName,date));
+            lblRegNo.setText(generateNewId());
+            txtCourseName.clear();
+            txtStudentName.clear();
+            txtStudentNic.clear();
+            txtCourseFee.clear();
+            txtCourseDuration.clear();
+            cmbCourseId.getSelectionModel().clearSelection();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Register has not been done successfully").show();
+        }
+    }
+
+    public void textFields_Key_Released(KeyEvent keyEvent) {
+        try {
+            getStudentName(txtStudentNic.getText());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

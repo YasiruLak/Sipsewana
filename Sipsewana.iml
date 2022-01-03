@@ -10,7 +10,9 @@
     <facet type="jpa" name="JPA">
       <configuration>
         <setting name="validation-enabled" value="true" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="Sipsewana" value="869fe10f-5699-4a60-a32b-6c2521a56a3d" />
+        </datasource-mapping>
         <naming-strategy-map />
       </configuration>
     </facet>

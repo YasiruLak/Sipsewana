@@ -20,7 +20,7 @@ import java.util.List;
 public class Student implements SuperEntity {
     @Id
     private String niceNo;
-    private String name;
+    private String sName;
     private String address;
     private LocalDate dateOfBirth;
     private String gender;
@@ -33,7 +33,7 @@ public class Student implements SuperEntity {
 
     public Student(String niceNo, String name, String address, LocalDate dateOfBirth, String gender, String contact) {
         this.niceNo = niceNo;
-        this.name = name;
+        this.sName = name;
         this.address = address;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
@@ -42,7 +42,7 @@ public class Student implements SuperEntity {
 
     public Student(String niceNo, String name, String address, LocalDate dateOfBirth, String gender, String contact, List<Registration> studentInfo) {
         this.niceNo = niceNo;
-        this.name = name;
+        this.sName = name;
         this.address = address;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
@@ -59,11 +59,11 @@ public class Student implements SuperEntity {
     }
 
     public String getName() {
-        return name;
+        return sName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.sName = name;
     }
 
     public String getAddress() {
@@ -110,7 +110,7 @@ public class Student implements SuperEntity {
     public String toString() {
         return "Student{" +
                 "niceNo='" + niceNo + '\'' +
-                ", name='" + name + '\'' +
+                ", name='" + sName + '\'' +
                 ", address='" + address + '\'' +
                 ", dateOfBirth='" + dateOfBirth + '\'' +
                 ", gender='" + gender + '\'' +
