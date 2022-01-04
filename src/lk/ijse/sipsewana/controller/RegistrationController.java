@@ -1,6 +1,7 @@
 package lk.ijse.sipsewana.controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.beans.value.ChangeListener;
@@ -53,6 +54,7 @@ public class RegistrationController {
     public TableColumn colDate;
     public TextField txtSearch;
     public TableColumn colStudentId;
+    public JFXCheckBox paidBox;
 
     CourseDAO courseDAO = new CourseDAOImpl();
 
@@ -65,13 +67,21 @@ public class RegistrationController {
         lblRegNo.setText(generateNewId());
         loadCourseDetail();
         loadAllDetails();
+        btnRegister.setDisable(true);
 
-        colRegId.setCellValueFactory(new PropertyValueFactory<>("regId"));
-        colStudentId.setCellValueFactory(new PropertyValueFactory<>("sId"));
-        colStudentName.setCellValueFactory(new PropertyValueFactory<>("sName"));
-        colCourseId.setCellValueFactory(new PropertyValueFactory<>("cId"));
-        colCourseName.setCellValueFactory(new PropertyValueFactory<>("cName"));
-        colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        tblDetails.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("regId"));
+        tblDetails.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("studentNic"));
+        tblDetails.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("studentName"));
+        tblDetails.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("courseId"));
+        tblDetails.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("courseName"));
+        tblDetails.getColumns().get(5).setCellValueFactory(new PropertyValueFactory<>("regDate"));
+
+//        colRegId.setCellValueFactory(new PropertyValueFactory<>("regId"));
+//        colStudentId.setCellValueFactory(new PropertyValueFactory<>("sId"));
+//        colStudentName.setCellValueFactory(new PropertyValueFactory<>("sName"));
+//        colCourseId.setCellValueFactory(new PropertyValueFactory<>("cId"));
+//        colCourseName.setCellValueFactory(new PropertyValueFactory<>("cName"));
+//        colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
 
         cmbCourseId.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             getCourseDetails((String) newValue);
@@ -91,8 +101,8 @@ public class RegistrationController {
         try {
             ArrayList<CustomDTO> allDetails = registerBO.getAllDetails();
             for (CustomDTO detail : allDetails) {
-                tblDetails.getItems().add(new RegisterDetailTM(detail.getRegId(),detail.getsNic(),detail.getsName(),
-                        detail.getcId(),detail.getcName(),detail.getRegDate()));
+                tblDetails.getItems().add(new RegisterDetailTM(detail.getRegId(),detail.getStudentNic(),detail.getStudentName(),
+                        detail.getCourseId(),detail.getCourseName(),detail.getRegDate()));
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -136,7 +146,7 @@ public class RegistrationController {
     private String getLastDetailId() {
         List<RegisterDetailTM> tempDetailList = new ArrayList(tblDetails.getItems());
         Collections.sort(tempDetailList);
-        return tempDetailList.get(tempDetailList.size() - 1).getsId();
+        return tempDetailList.get(tempDetailList.size() - 1).getStudentNic();
     }
 
     private void getCourseDetails(String id){
@@ -148,7 +158,6 @@ public class RegistrationController {
             txtCourseName.setText(courseDetails.getName());
             txtCourseDuration.setText(courseDetails.getDuration());
             txtCourseFee.setText(String.valueOf(courseDetails.getFee()));
-
         }
     }
 
@@ -162,7 +171,7 @@ public class RegistrationController {
     public void getStudent(StudentDTO studentDTO){
         newStudent = studentDTO;
         if(newStudent!=null){
-            txtStudentNic.setText(newStudent.getNiceNo());
+            txtStudentNic.setText(newStudent.getNicNo());
             txtStudentName.setText(newStudent.getName());
         }
     }
@@ -183,7 +192,7 @@ public class RegistrationController {
         List<CustomDTO> detail = registerBO.searchDetail(value);
 
         for (CustomDTO temp:detail) {
-            obList.add(new RegisterDetailTM(temp.getRegId(),temp.getsNic(),temp.getsName(),temp.getcId(),temp.getcName(),temp.getRegDate()));
+            obList.add(new RegisterDetailTM(temp.getRegId(),temp.getStudentNic(),temp.getStudentName(),temp.getCourseId(),temp.getCourseName(),temp.getRegDate()));
         }
 
         tblDetails.setItems(obList);
@@ -222,5 +231,13 @@ public class RegistrationController {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public void paidOnAction(ActionEvent actionEvent) {
+        boolean isSelect= paidBox.isSelected();
+        if (isSelect) {
+            btnRegister.setDisable(false);
+        }
+
     }
 }

@@ -19,7 +19,7 @@ import java.util.List;
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Student implements SuperEntity {
     @Id
-    private String niceNo;
+    private String nicNo;
     private String sName;
     private String address;
     private LocalDate dateOfBirth;
@@ -31,8 +31,8 @@ public class Student implements SuperEntity {
     public Student() {
     }
 
-    public Student(String niceNo, String name, String address, LocalDate dateOfBirth, String gender, String contact) {
-        this.niceNo = niceNo;
+    public Student(String nicNo, String name, String address, LocalDate dateOfBirth, String gender, String contact) {
+        this.nicNo = nicNo;
         this.sName = name;
         this.address = address;
         this.dateOfBirth = dateOfBirth;
@@ -40,8 +40,8 @@ public class Student implements SuperEntity {
         this.contact = contact;
     }
 
-    public Student(String niceNo, String name, String address, LocalDate dateOfBirth, String gender, String contact, List<Registration> studentInfo) {
-        this.niceNo = niceNo;
+    public Student(String nicNo, String name, String address, LocalDate dateOfBirth, String gender, String contact, List<Registration> studentInfo) {
+        this.nicNo = nicNo;
         this.sName = name;
         this.address = address;
         this.dateOfBirth = dateOfBirth;
@@ -50,12 +50,12 @@ public class Student implements SuperEntity {
         this.studentInfo = studentInfo;
     }
 
-    public String getNiceNo() {
-        return niceNo;
+    public String getNicNo() {
+        return nicNo;
     }
 
-    public void setNiceNo(String niceNo) {
-        this.niceNo = niceNo;
+    public void setNicNo(String niceNo) {
+        this.nicNo = niceNo;
     }
 
     public String getName() {
@@ -109,7 +109,7 @@ public class Student implements SuperEntity {
     @Override
     public String toString() {
         return "Student{" +
-                "niceNo='" + niceNo + '\'' +
+                "niceNo='" + nicNo + '\'' +
                 ", name='" + sName + '\'' +
                 ", address='" + address + '\'' +
                 ", dateOfBirth='" + dateOfBirth + '\'' +

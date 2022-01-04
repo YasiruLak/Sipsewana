@@ -67,7 +67,7 @@ public class StudentDetailController {
 
     public void initialize(){
 
-        colNic.setCellValueFactory(new PropertyValueFactory<>("niceNo"));
+        colNic.setCellValueFactory(new PropertyValueFactory<>("studentNic"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
         colDateOfBirth.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
@@ -88,7 +88,7 @@ public class StudentDetailController {
 
         tblStudent.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null){
-                txtNicNo.setText(newValue.getNiceNo());
+                txtNicNo.setText(newValue.getStudentNic());
                 txtFullName.setText(newValue.getName());
                 txtAddress.setText(newValue.getAddress());
                 dpkDateOfBirth.setValue(newValue.getDateOfBirth());
@@ -115,7 +115,7 @@ public class StudentDetailController {
             e.printStackTrace();
         }
         for (StudentDTO student : allStudents) {
-            tblStudent.getItems().add(new StudentTM(student.getNiceNo(),student.getName(),student.getAddress(),
+            tblStudent.getItems().add(new StudentTM(student.getNicNo(),student.getName(),student.getAddress(),
                     student.getDateOfBirth(),student.getGender(),student.getContact()));
         }
 
@@ -204,7 +204,7 @@ public class StudentDetailController {
         StudentTM selectedStudent = tblStudent.getSelectionModel().getSelectedItem();
         selectedStudent.setName(name);
         selectedStudent.setAddress(address);
-        selectedStudent.setNiceNo(nic);
+        selectedStudent.setStudentNic(nic);
         selectedStudent.setContact(contact);
         selectedStudent.setGender(gender);
         selectedStudent.setDateOfBirth(dob);
@@ -212,7 +212,7 @@ public class StudentDetailController {
     }
 
     public void deleteOnAction(ActionEvent actionEvent) {
-        String id = tblStudent.getSelectionModel().getSelectedItem().getNiceNo();
+        String id = tblStudent.getSelectionModel().getSelectedItem().getStudentNic();
         try {
             if (!existStudent(id)) {
                 new Alert(Alert.AlertType.ERROR, "There is no such student associated with the id " + id).show();
@@ -247,7 +247,7 @@ public class StudentDetailController {
 
             students.forEach(e->{
                 obList.add(
-                        new StudentTM(e.getNiceNo(),e.getName(),e.getAddress(),e.getDateOfBirth(),e.getGender(),e.getContact()));
+                        new StudentTM(e.getNicNo(),e.getName(),e.getAddress(),e.getDateOfBirth(),e.getGender(),e.getContact()));
             });
             tblStudent.setItems(obList);
         } catch (SQLException throwables) {

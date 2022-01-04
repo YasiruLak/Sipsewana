@@ -1,5 +1,6 @@
 package lk.ijse.sipsewana.dto;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
@@ -10,8 +11,8 @@ import java.time.LocalDate;
  * @year : 2021
  * @since : 0.1.0
  **/
-public class StudentDTO {
-    private String niceNo;
+public class StudentDTO implements Serializable {
+    private String nicNo;
     private String name;
     private String address;
     private LocalDate dateOfBirth;
@@ -21,8 +22,8 @@ public class StudentDTO {
     public StudentDTO() {
     }
 
-    public StudentDTO(String niceNo, String name, String address, LocalDate dateOfBirth, String gender, String contact) {
-        this.niceNo = niceNo;
+    public StudentDTO(String nicNo, String name, String address, LocalDate dateOfBirth, String gender, String contact) {
+        this.nicNo = nicNo;
         this.name = name;
         this.address = address;
         this.dateOfBirth = dateOfBirth;
@@ -31,7 +32,7 @@ public class StudentDTO {
     }
 
     public StudentDTO(String nic, String name, String address, String dob, String gender, String contact) {
-        this.niceNo = niceNo;
+        this.nicNo = nicNo;
         this.name = name;
         this.address = address;
         this.dateOfBirth = dateOfBirth;
@@ -39,12 +40,12 @@ public class StudentDTO {
         this.contact = contact;
     }
 
-    public String getNiceNo() {
-        return niceNo;
+    public String getNicNo() {
+        return nicNo;
     }
 
-    public void setNiceNo(String niceNo) {
-        this.niceNo = niceNo;
+    public void setNicNo(String nicNo) {
+        this.nicNo = nicNo;
     }
 
     public String getName() {
@@ -90,7 +91,7 @@ public class StudentDTO {
     @Override
     public String toString() {
         return "StudentDTO{" +
-                "niceNo='" + niceNo + '\'' +
+                "niceNo='" + nicNo + '\'' +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", dateOfBirth='" + dateOfBirth + '\'' +

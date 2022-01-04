@@ -11,7 +11,7 @@ import java.time.LocalDate;
  * @since : 0.1.0
  **/
 public class StudentTM implements Comparable<StudentTM>{
-    private String niceNo;
+    private String studentNic;
     private String name;
     private String address;
     private LocalDate dateOfBirth;
@@ -21,8 +21,8 @@ public class StudentTM implements Comparable<StudentTM>{
     public StudentTM() {
     }
 
-    public StudentTM(String niceNo, String name, String address, LocalDate dateOfBirth, String gender, String contact) {
-        this.niceNo = niceNo;
+    public StudentTM(String studentNic, String name, String address, LocalDate dateOfBirth, String gender, String contact) {
+        this.studentNic = studentNic;
         this.name = name;
         this.address = address;
         this.dateOfBirth = dateOfBirth;
@@ -30,12 +30,12 @@ public class StudentTM implements Comparable<StudentTM>{
         this.contact = contact;
     }
 
-    public String getNiceNo() {
-        return niceNo;
+    public String getStudentNic() {
+        return studentNic;
     }
 
-    public void setNiceNo(String niceNo) {
-        this.niceNo = niceNo;
+    public void setStudentNic(String studentNic) {
+        this.studentNic = studentNic;
     }
 
     public String getName() {
@@ -81,7 +81,7 @@ public class StudentTM implements Comparable<StudentTM>{
     @Override
     public String toString() {
         return "StudentTM{" +
-                "niceNo='" + niceNo + '\'' +
+                "niceNo='" + studentNic + '\'' +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
@@ -92,6 +92,6 @@ public class StudentTM implements Comparable<StudentTM>{
 
     @Override
     public int compareTo(StudentTM o) {
-        return niceNo.compareTo(o.getNiceNo());
+        return studentNic.compareTo(o.getStudentNic());
     }
 }

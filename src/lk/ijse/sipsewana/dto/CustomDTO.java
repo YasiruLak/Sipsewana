@@ -13,21 +13,21 @@ import java.time.LocalDate;
  **/
 public class CustomDTO implements Serializable {
     private String regId;
-    private String sNic;
-    private String sName;
-    private String cId;
-    private String cName;
+    private String studentNic;
+    private String studentName;
+    private String courseId;
+    private String courseName;
     private LocalDate regDate;
 
     public CustomDTO() {
     }
 
-    public CustomDTO(String regId, String sNic, String sName, String cId, String cName, LocalDate regDate) {
+    public CustomDTO(String regId, String studentNic, String studentName, String courseId, String courseName, LocalDate regDate) {
         this.regId = regId;
-        this.sNic = sNic;
-        this.sName = sName;
-        this.cId = cId;
-        this.cName = cName;
+        this.studentNic = studentNic;
+        this.studentName = studentName;
+        this.courseId = courseId;
+        this.courseName = courseName;
         this.regDate = regDate;
     }
 
@@ -39,36 +39,36 @@ public class CustomDTO implements Serializable {
         this.regId = regId;
     }
 
-    public String getsNic() {
-        return sNic;
+    public String getStudentNic() {
+        return studentNic;
     }
 
-    public void setsNic(String sNic) {
-        this.sNic = sNic;
+    public void setStudentNic(String studentNic) {
+        this.studentNic = studentNic;
     }
 
-    public String getsName() {
-        return sName;
+    public String getStudentName() {
+        return studentName;
     }
 
-    public void setsName(String sName) {
-        this.sName = sName;
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 
-    public String getcId() {
-        return cId;
+    public String getCourseId() {
+        return courseId;
     }
 
-    public void setcId(String cId) {
-        this.cId = cId;
+    public void setCourseId(String courseId) {
+        this.courseId = courseId;
     }
 
-    public String getcName() {
-        return cName;
+    public String getCourseName() {
+        return courseName;
     }
 
-    public void setcName(String cName) {
-        this.cName = cName;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
     public LocalDate getRegDate() {
@@ -83,10 +83,10 @@ public class CustomDTO implements Serializable {
     public String toString() {
         return "CustomDTO{" +
                 "regId='" + regId + '\'' +
-                ", sNic='" + sNic + '\'' +
-                ", sName='" + sName + '\'' +
-                ", cId='" + cId + '\'' +
-                ", cName='" + cName + '\'' +
+                ", studentNice='" + studentNic + '\'' +
+                ", studentName='" + studentName + '\'' +
+                ", courseId='" + courseId + '\'' +
+                ", courseName='" + courseName + '\'' +
                 ", regDate=" + regDate +
                 '}';
     }

@@ -1,5 +1,6 @@
 package lk.ijse.sipsewana.dto;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
@@ -10,20 +11,20 @@ import java.time.LocalDate;
  * @year : 2022
  * @since : 0.1.0
  **/
-public class RegistrationDTO {
+public class RegistrationDTO implements Serializable {
     private String regId;
-    private String sNic;
+    private String nicNo;
     private String cId;
     private LocalDate regDate;
 
     public RegistrationDTO() {
     }
 
-    public RegistrationDTO(String regId, String sNic, String cId, LocalDate regDate) {
-        this.regId = regId;
-        this.sNic = sNic;
+    public RegistrationDTO(String regId, String nicNo, String cId, LocalDate regDate) {
+        setRegId(regId);
+        this.nicNo = nicNo;
         this.cId = cId;
-        this.regDate = regDate;
+        setRegDate(regDate);
     }
 
     public String getRegId() {
@@ -34,12 +35,12 @@ public class RegistrationDTO {
         this.regId = regId;
     }
 
-    public String getsNic() {
-        return sNic;
+    public String getNicNo() {
+        return nicNo;
     }
 
-    public void setsNic(String sNic) {
-        this.sNic = sNic;
+    public void setNicNo(String nicNo) {
+        this.nicNo = nicNo;
     }
 
     public String getcId() {
@@ -62,7 +63,7 @@ public class RegistrationDTO {
     public String toString() {
         return "RegistrationDTO{" +
                 "regId='" + regId + '\'' +
-                ", sNic='" + sNic + '\'' +
+                ", sNic='" + nicNo + '\'' +
                 ", cId='" + cId + '\'' +
                 ", regDate=" + regDate +
                 '}';

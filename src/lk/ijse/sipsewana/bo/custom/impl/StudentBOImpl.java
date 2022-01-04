@@ -27,7 +27,7 @@ public class StudentBOImpl implements StudentBO {
         ArrayList<Student> all = (ArrayList<Student>) studentDAO.getAll();
         for (Student student : all) {
             allStudents.add(new StudentDTO(
-                    student.getNiceNo(),
+                    student.getNicNo(),
                     student.getName(),
                     student.getAddress(),
                     student.getDateOfBirth(),
@@ -40,7 +40,7 @@ public class StudentBOImpl implements StudentBO {
     @Override
     public boolean addStudent(StudentDTO studentDTO) throws Exception {
         return studentDAO.add(new Student(
-                studentDTO.getNiceNo(),
+                studentDTO.getNicNo(),
                 studentDTO.getName(),
                 studentDTO.getAddress(),
                 studentDTO.getDateOfBirth(),
@@ -51,7 +51,7 @@ public class StudentBOImpl implements StudentBO {
     @Override
     public boolean updateStudent(StudentDTO studentDTO) throws Exception {
         return studentDAO.update(new Student(
-                studentDTO.getNiceNo(),
+                studentDTO.getNicNo(),
                 studentDTO.getName(),
                 studentDTO.getAddress(),
                 studentDTO.getDateOfBirth(),

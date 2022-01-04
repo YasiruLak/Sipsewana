@@ -5,8 +5,7 @@ import lk.ijse.sipsewana.dto.CustomDTO;
 import lk.ijse.sipsewana.util.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
-
+import org.hibernate.query.NativeQuery;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -36,14 +35,16 @@ public class QueryDAOImpl implements QueryDAO {
 
         Transaction transaction = session.beginTransaction();
 
-        Query query = session.createQuery
-                ("SELECT r.regId,s.niceNo,s.sName,c.id,c.name,r.regDate FROM Registration r INNER JOIN Student s ON r.student=s.niceNo INNER JOIN Course c ON r.course=c.id");
+        NativeQuery query = session.createSQLQuery
+                ("SELECT r.regId,s.nicNo,s.sName,c.id,c.name,r.regDate FROM Registration r INNER JOIN Student s ON r.student_nicNo=s.nicNo INNER JOIN Course c ON r.course_id=c.id");
 
         ArrayList<Object[]> details = (ArrayList<Object[]>) query.list();
 
         transaction.commit();
 
         session.close();
+
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 
         for (Object[] temp:details) {
             allDetails.add(new CustomDTO(
@@ -52,7 +53,7 @@ public class QueryDAOImpl implements QueryDAO {
                     (String) temp[2],
                     (String) temp[3],
                     (String) temp[4],
-                    (LocalDate) temp[5]
+                    LocalDate.parse(df.format(temp[5]))
             ));
         }
         return allDetails;
@@ -66,7 +67,7 @@ public class QueryDAOImpl implements QueryDAO {
 
         Transaction transaction = session.beginTransaction();
 
-        List<Object[]> details = session.createSQLQuery("SELECT r.regId,s.niceNo,s.sName,c.id,c.name,r.RegDate FROM  Registration r INNER JOIN Student s ON r. student_niceNo=s.niceNo INNER JOIN course c ON r. course_id=c.id WHERE id LIKE '%" + s + "%' or c.name LIKE '%" + s + "%' ").list();
+        List<Object[]> details = session.createSQLQuery("SELECT r.regId,s.nicNo,s.sName,c.id,c.name,r.RegDate FROM  Registration r INNER JOIN Student s ON r. student_nicNo=s.nicNo INNER JOIN course c ON r. course_id=c.id WHERE id LIKE '%" + s + "%' or c.name LIKE '%" + s + "%' ").list();
 
         transaction.commit();
 

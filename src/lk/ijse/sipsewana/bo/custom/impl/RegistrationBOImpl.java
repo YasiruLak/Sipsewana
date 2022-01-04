@@ -2,10 +2,8 @@ package lk.ijse.sipsewana.bo.custom.impl;
 
 import lk.ijse.sipsewana.bo.custom.RegistrationBO;
 import lk.ijse.sipsewana.dao.DAOFactory;
-import lk.ijse.sipsewana.dao.custom.CourseDAO;
 import lk.ijse.sipsewana.dao.custom.QueryDAO;
 import lk.ijse.sipsewana.dao.custom.RegisterDAO;
-import lk.ijse.sipsewana.dao.custom.StudentDAO;
 import lk.ijse.sipsewana.dto.CustomDTO;
 import lk.ijse.sipsewana.dto.RegistrationDTO;
 import lk.ijse.sipsewana.entity.Course;
@@ -39,7 +37,7 @@ public class RegistrationBOImpl implements RegistrationBO {
 
         Transaction transaction = session.beginTransaction();
 
-        Student student = session.get(Student.class, dto.getsNic());
+        Student student = session.get(Student.class, dto.getNicNo());
 
         Course program = session.get(Course.class, dto.getcId());
         
@@ -60,8 +58,8 @@ public class RegistrationBOImpl implements RegistrationBO {
         ArrayList<CustomDTO> allDetails = new ArrayList<>();
         ArrayList<CustomDTO> all = queryDAO.getAll();
         for (CustomDTO register : all) {
-            allDetails.add(new CustomDTO(register.getRegId(),register.getsNic(),register.getsName(),
-                    register.getcId(),register.getcName(),register.getRegDate()));
+            allDetails.add(new CustomDTO(register.getRegId(),register.getStudentNic(),register.getStudentName(),
+                    register.getCourseId(),register.getCourseName(),register.getRegDate()));
         }
         return allDetails;
     }

@@ -1,5 +1,7 @@
 package lk.ijse.sipsewana.dto;
 
+import java.io.Serializable;
+
 /**
  * @author : Yasiru Dahanayaka
  * @name : Sipsewana
@@ -8,7 +10,7 @@ package lk.ijse.sipsewana.dto;
  * @year : 2021
  * @since : 0.1.0
  **/
-public class CourseDTO {
+public class CourseDTO implements Serializable {
     private String id;
     private String name;
     private String duration;

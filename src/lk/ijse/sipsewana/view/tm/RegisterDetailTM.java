@@ -13,22 +13,22 @@ import java.time.LocalDate;
 public class RegisterDetailTM implements Comparable<RegisterDetailTM>{
 
     private String regId;
-    private String sId;
-    private String sName;
-    private String cId;
-    private String cName;
-    private LocalDate date;
+    private String studentNic;
+    private String studentName;
+    private String courseId;
+    private String courseName;
+    private LocalDate regDate;
 
     public RegisterDetailTM() {
     }
 
-    public RegisterDetailTM(String regId, String sId, String sName, String cId, String cName, LocalDate date) {
+    public RegisterDetailTM(String regId, String studentNic, String studentName, String courseId, String courseName, LocalDate regDate) {
         this.regId = regId;
-        this.sId = sId;
-        this.sName = sName;
-        this.cId = cId;
-        this.cName = cName;
-        this.date = date;
+        this.studentNic = studentNic;
+        this.studentName = studentName;
+        this.courseId = courseId;
+        this.courseName = courseName;
+        this.regDate = regDate;
     }
 
     public String getRegId() {
@@ -39,55 +39,55 @@ public class RegisterDetailTM implements Comparable<RegisterDetailTM>{
         this.regId = regId;
     }
 
-    public String getsId() {
-        return sId;
+    public String getStudentNic() {
+        return studentNic;
     }
 
-    public void setsId(String sId) {
-        this.sId = sId;
+    public void setStudentNic(String studentNic) {
+        this.studentNic = studentNic;
     }
 
-    public String getsName() {
-        return sName;
+    public String getStudentName() {
+        return studentName;
     }
 
-    public void setsName(String sName) {
-        this.sName = sName;
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 
-    public String getcId() {
-        return cId;
+    public String getCourseId() {
+        return courseId;
     }
 
-    public void setcId(String cId) {
-        this.cId = cId;
+    public void setCourseId(String courseId) {
+        this.courseId = courseId;
     }
 
-    public String getcName() {
-        return cName;
+    public String getCourseName() {
+        return courseName;
     }
 
-    public void setcName(String cName) {
-        this.cName = cName;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public LocalDate getRegDate() {
+        return regDate;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setRegDate(LocalDate regDate) {
+        this.regDate = regDate;
     }
 
     @Override
     public String toString() {
         return "RegisterDetailTM{" +
                 "regId='" + regId + '\'' +
-                ", sId='" + sId + '\'' +
-                ", sName='" + sName + '\'' +
-                ", cId='" + cId + '\'' +
-                ", cName='" + cName + '\'' +
-                ", date=" + date +
+                ", studentNice='" + studentNic + '\'' +
+                ", studentName='" + studentName + '\'' +
+                ", courseId='" + courseId + '\'' +
+                ", courseName='" + courseName + '\'' +
+                ", regDate=" + regDate +
                 '}';
     }
 
